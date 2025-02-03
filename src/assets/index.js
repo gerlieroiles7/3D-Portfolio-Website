@@ -9,22 +9,27 @@ import close from "./close.svg";
 
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
-import figma from "./tech/figma.png";
+import webpack from "./tech/webpack.png";
 import git from "./tech/git.png";
 import html from "./tech/html.png";
 import javascript from "./tech/javascript.png";
 import mongodb from "./tech/mongodb.png";
 import nodejs from "./tech/nodejs.png";
 import reactjs from "./tech/reactjs.png";
-import redux from "./tech/redux.png";
+import bootstrap from "./tech/bootstrap.png";
 import tailwind from "./tech/tailwind.png";
-import typescript from "./tech/typescript.png";
+import php from "./tech/php.png";
 import threejs from "./tech/threejs.svg";
+import postman from "./tech/postman.png";
+import sql from "./tech/sql.png";
+import postgresql from "./tech/postgresql.png";
+import laravel from "./tech/laravel.png";
+import vscode from "./tech/vscode.png";
+import eclipse from "./tech/eclipse.png";
+import angular from "./tech/angularjs.png";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
+import computer from "./company/computer.png";
+import developer from "./company/developer.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
@@ -41,21 +46,26 @@ export {
   close,
   css,
   docker,
-  figma,
+  webpack,
   git,
   html,
   javascript,
   mongodb,
   nodejs,
   reactjs,
-  redux,
+  bootstrap,
   tailwind,
-  typescript,
+  php,
   threejs,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
+  postman,
+  angular,
+  sql,
+  postgresql,
+  laravel,
+  vscode,
+  eclipse,
+  computer,
+  developer,
   carrent,
   jobit,
   tripguide,
