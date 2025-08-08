@@ -71,7 +71,7 @@ const Contact = () => {
     >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
+        className='flex-[0.75] glass-dark backdrop-blur-md p-8 rounded-2xl border border-pink-primary/10'
       >
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
@@ -81,47 +81,97 @@ const Contact = () => {
           onSubmit={handleSubmit}
           className='mt-12 flex flex-col gap-8'
         >
-          <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your Name</span>
+          <motion.label 
+            className='flex flex-col'
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.2 }}
+          >
+            <span className='text-white font-medium mb-4 flex items-center gap-2'>
+              <span className="w-2 h-2 bg-pink-primary rounded-full"></span>
+              Your Name
+            </span>
             <input
               type='text'
               name='name'
               value={form.name}
               onChange={handleChange}
               placeholder="What's your good name?"
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+              className='bg-tertiary/50 py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border border-white/10 focus:border-pink-primary transition-all duration-300 backdrop-blur-sm'
             />
-          </label>
-          <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your email</span>
+          </motion.label>
+          
+          <motion.label 
+            className='flex flex-col'
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.2 }}
+          >
+            <span className='text-white font-medium mb-4 flex items-center gap-2'>
+              <span className="w-2 h-2 bg-pink-accent rounded-full"></span>
+              Your email
+            </span>
             <input
               type='email'
               name='email'
               value={form.email}
               onChange={handleChange}
               placeholder="What's your web address?"
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+              className='bg-tertiary/50 py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border border-white/10 focus:border-pink-accent transition-all duration-300 backdrop-blur-sm'
             />
-          </label>
-          <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your Message</span>
+          </motion.label>
+          
+          <motion.label 
+            className='flex flex-col'
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.2 }}
+          >
+            <span className='text-white font-medium mb-4 flex items-center gap-2'>
+              <span className="w-2 h-2 bg-pink-dark rounded-full"></span>
+              Your Message
+            </span>
             <textarea
               rows={7}
               name='message'
               value={form.message}
               onChange={handleChange}
               placeholder='What you want to say?'
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+              className='bg-tertiary/50 py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border border-white/10 focus:border-pink-dark transition-all duration-300 backdrop-blur-sm resize-none'
             />
-          </label>
+          </motion.label>
 
-          <button
+          <motion.button
             type='submit'
-            className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
+            className='btn-primary w-fit'
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            disabled={loading}
           >
-            {loading ? "Sending..." : "Send"}
-          </button>
+            {loading ? (
+              <div className="flex items-center gap-2">
+                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                Sending...
+              </div>
+            ) : (
+              "Send Message"
+            )}
+          </motion.button>
         </form>
+
+        {/* Contact info */}
+        <motion.div 
+          className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+        >
+          <div className="glass rounded-lg p-4 text-center">
+            <div className="text-pink-primary font-semibold mb-1">Email</div>
+            <div className="text-secondary text-sm">gerlieroiles27@gmail.com</div>
+          </div>
+          <div className="glass rounded-lg p-4 text-center">
+            <div className="text-pink-accent font-semibold mb-1">Location</div>
+            <div className="text-secondary text-sm">Philippines</div>
+          </div>
+        </motion.div>
       </motion.div>
 
       <motion.div
